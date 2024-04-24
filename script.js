@@ -1,3 +1,21 @@
-//There should be a 6 digit input where users can insert numbers and on typing the number the next input should be seen focuse
-//On backspace key press the number should be deleted from the last filled input and the input before it should be focused.
+let inputs = document.getElementsByClassName("code");
+for(let t of inputs){
+	t.addEventListener("input", inputChanged);
+	t.addEventListener("keydown", inputChangedAgain);
+}
+function inputChanged(event_details){
+	let inputTarget = event_details.target;
+	let idx = parseInt(inputTarget.id.replace('p', ''));//1based h but agle pe point kar rha h
+	inputs[idx].focus();
+}
+function inputChangedAgain(event_details){
+	let key = event_details.key;
+	if(key.toLowerCase() === 'backspace'){
+		event_details.preventDefault();
+		let inputTarget = event_details.target;
+		inputTarget.value  = "";
+		let idx = parseInt(inputTarget.id.replace('p', '')) - 2;//0 based h aur peeche point kr rha
+		if(idx >= 0) inputs[idx].focus();
+	}
+}
 
