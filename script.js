@@ -11,7 +11,7 @@ function inputChanged(event_details){
 	let inputTarget = event_details.target;
 	let idx = parseInt(inputTarget.id.replace('code-', ''));//1based h but agle pe point kar rha h
 	// setTimeout(() => inputs[idx].focus(), 200);
-	inputs[idx].focus();
+	if(idx < inputs.length)inputs[idx].focus();
 }
 function inputChangedAgain(event_details){
 	let key = event_details.key;
