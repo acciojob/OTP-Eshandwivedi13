@@ -1,7 +1,7 @@
 let inputs = document.getElementsByClassName("code");
-// window.onload = function() {
-//     document.getElementById('code-1').focus();
-// };
+window.onload = function() {
+    document.getElementById('code-1').focus();
+};
 
 for(let t of inputs){
 	t.addEventListener("input", inputChanged);
