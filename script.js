@@ -27,11 +27,33 @@ function inputChangedAgain(event_details){
 		console.log("abc")
 	}
 }
+/*//joydeep's code is best
+let inputs = document.querySelectorAll(".code")
+window.addEventListener("load",()=>inputs[0].focus());
+
+let index = 0
+
+for (let i of inputs) {
+    i.addEventListener('keyup', (eventDetails) => {
+        let inputElement = eventDetails.target.value
+        if (inputElement.length == 1) {
+            if (index < inputs.length - 1) {
+                index++;
+                inputs[index].focus();
+            }
+        } else if (inputElement.length == 0) {
+            if (index > 0) {
+                index--;
+                inputs[index].focus();
+            }
+        }
+    });
+}
+*/
 
 /*//HARSHITA's Code
 document.addEventListener('DOMContentLoaded', function() {
     const inputs = document.querySelectorAll('.code');
-
     inputs.forEach((input, index) => {
         input.addEventListener('input', () => {
             // If input length is 1, move focus to the next input
@@ -41,21 +63,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-
         input.addEventListener('keydown', (event) => {
             // If backspace is pressed and input is empty, focus the previous input
             if (event.key === 'Backspace' && input.value.length === 0 && index > 0) {
-                inputs[index - 1].focus();
-				
-
+                inputs[index - 1].focus();			
             }
         });
     });
-	
     inputs[0].focus(); 
 });
 */
-/*
+/* // saiPrasad
 window.onload = function() {
     document.getElementById('code-1').focus();
 };
@@ -75,3 +93,4 @@ inputs.forEach((input, index) => {
     });
 });
 */
+
